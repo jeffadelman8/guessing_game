@@ -1,5 +1,5 @@
 var beans = Math.floor(Math.random()*100);
-var guess = prompt("Pick a #, 1-100");
+var guess = parseInt(prompt("Pick a number, 1-100"));
 var Player = {
 	tries: 0
 };
@@ -9,14 +9,12 @@ if (guess == beans) {
 } else {
 	while(guess!==beans){
 		if (guess<beans){
-			guess=prompt("Higher");
+			guess=parseInt(prompt("Too low!"));
 			Player.tries++;
 		} else if (guess>beans){
-			guess=prompt("Lower");
+			guess=parseInt(prompt("Too high!"));
 			Player.tries++;
-		} else {
-			alert("Congratulations! YOU WON in " + Player.tries + " guesses!!"
-				);
-		}
+		} 
 	}
+	alert("Congratulations! YOU WON in " + Player.tries + " guesses!!");
 };
